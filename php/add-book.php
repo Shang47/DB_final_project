@@ -21,18 +21,27 @@ if (isset($_SESSION['user_id']) &&
 	**/
 	if (isset($_POST['book_title'])       &&
         isset($_POST['book_description']) &&
+		isset($_POST['book_price']) &&
         isset($_POST['book_author'])      &&
         isset($_POST['book_category'])    &&
         isset($_FILES['book_cover'])      &&
-        isset($_FILES['file'])) {
+        //isset($_FILES['file'])            &&
+		isset($_POST['size'])      &&
+		isset($_POST['brand'])      &&
+		isset($_POST['vendor'])) {
 		/** 
 		Get data from POST request 
 		and store them in var
 		**/
 		$title       = $_POST['book_title'];
 		$description = $_POST['book_description'];
+		$price       = $_POST['book_price'];
 		$author      = $_POST['book_author'];
 		$category    = $_POST['book_category'];
+		$size = $_POST['size'];
+		$brand= $_POST['brand'];
+		$vendor_id = $_POST['vendor'];
+
 
 		# making URL data format
 		$user_input = 'title='.$title.'&category_id='.$category.'&desc='.$description.'&author_id='.$author;
@@ -110,10 +119,15 @@ if (isset($_SESSION['user_id']) &&
                                             description,
                                             category_id,
                                             cover,
-                                            file)
-                         VALUES (?,?,?,?,?,?)";
+                                            file,
+											price,
+											size,
+											廠牌,
+											賣家id
+											)
+                         VALUES (?,?,?,?,?,?,?,?,?,?)";
                 $stmt = $conn->prepare($sql);
-			    $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $file_URL]);
+			    $res  = $stmt->execute([$title, $author, $description, $category, $book_cover_URL, $file_URL,$price,$size,$brand,$vendor_id]);
 
 			/**
 		      If there is no error while 

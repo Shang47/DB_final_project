@@ -31,6 +31,10 @@ if (isset($_SESSION['user_id']) &&
     if (isset($_GET['author_id'])) {
     	$author_id = $_GET['author_id'];
     }else $author_id = 0;
+	$price = '';
+	$size = '';
+	$vendor_id='';
+	$brand = ''; 
 ?>
 
 <!DOCTYPE html>
@@ -124,6 +128,26 @@ if (isset($_SESSION['user_id']) &&
 
 		<div class="mb-3">
 		    <label class="form-label">
+		           商品價錢
+		           </label>
+		    <input type="text" 
+		           class="form-control"
+		           value="<?=$price?>" 
+		           name="book_price">
+		</div>
+
+		<div class="mb-3">
+		    <label class="form-label">
+		           尺寸(S,M,L,X)
+		           </label>
+		    <input type="text" 
+		           class="form-control"
+		           value="<?=$size?>" 
+		           name="size">
+		</div>
+
+		<div class="mb-3">
+		    <label class="form-label">
 		           賣家
 		           </label>
 		    <select name="book_author"
@@ -149,6 +173,26 @@ if (isset($_SESSION['user_id']) &&
 						</option>
 		    	   <?php }} } ?>
 		    </select>
+		</div>
+
+		<div class="mb-3">
+		    <label class="form-label">
+		           賣家id
+		           </label>
+		    <input type="text" 
+		           class="form-control"
+		           value="<?=$vendor_id?>" 
+		           name="vendor">
+		</div>
+
+		<div class="mb-3">
+		    <label class="form-label">
+		           廠牌
+		           </label>
+		    <input type="text" 
+		           class="form-control"
+		           value="<?=$brand?>" 
+		           name="brand">
 		</div>
 
 		<div class="mb-3">
