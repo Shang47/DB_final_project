@@ -80,8 +80,8 @@ if (isset($_SESSION['user_id']) &&
 		  <input type="text" 
 		         class="form-control"
 		         name="key" 
-		         placeholder="Search Book..." 
-		         aria-label="Search Book..." 
+		         placeholder="Search Store..." 
+		         aria-label="Search Store..." 
 		         aria-describedby="basic-addon2">
 
 		  <button class="input-group-text
