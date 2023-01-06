@@ -201,12 +201,12 @@ if (isset($_SESSION['user_id']) &&
 		    </div>
         <?php }else {?>
 	    <!-- List of all categories -->
-		<h4 class="mt-5">所有角色</h4>
+		<h4 class="mt-5">所有作品</h4>
 		<table class="table table-bordered shadow">
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>角色名稱</th>
+					<th>作品名稱</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -222,11 +222,11 @@ if (isset($_SESSION['user_id']) &&
 					<td>
 						<a href="edit-category.php?id=<?=$category['id']?>" 
 						   class="btn btn-warning">
-						   編輯角色名稱</a>
+						   編輯作品名稱</a>
 
 						<a href="php/delete-category.php?id=<?=$category['id']?>" 
 						   class="btn btn-danger">
-					       刪除此角色</a>
+					       刪除此作品</a>
 					</td>
 				</tr>
 			    <?php } ?>
@@ -245,12 +245,12 @@ if (isset($_SESSION['user_id']) &&
 		    </div>
         <?php }else {?>
 	    <!-- List of all Authors -->
-		<h4 class="mt-5">所有作品</h4>
+		<h4 class="mt-5">所有角色</h4>
          <table class="table table-bordered shadow">
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>作品名稱</th>
+					<th>角色名稱</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -266,11 +266,11 @@ if (isset($_SESSION['user_id']) &&
 					<td>
 						<a href="edit-author.php?id=<?=$author['id']?>" 
 						   class="btn btn-warning">
-						   編輯作品名稱</a>
+						   編輯角色名稱</a>
 
 						<a href="php/delete-author.php?id=<?=$author['id']?>" 
 						   class="btn btn-danger">
-					       刪除此作品</a>
+					       刪除此角色</a>
 					</td>
 				</tr>
 			    <?php } ?>

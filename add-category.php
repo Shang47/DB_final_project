@@ -22,9 +22,9 @@ if (isset($_SESSION['user_id']) &&
 </head>
 <body>
 	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="admin.php">Admin</a>
+		    <a class="navbar-brand" href="admin.php">總覽</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -34,23 +34,23 @@ if (isset($_SESSION['user_id']) &&
 		        <li class="nav-item">
 		          <a class="nav-link" 
 		             aria-current="page" 
-		             href="index.php">Store</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" 
-		             href="add-book.php">Add Book</a>
+		             href="index.php">賣場</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link active" 
-		             href="add-category.php">Add Category</a>
+		             href="add-book.php">新增商品</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-author.php">Add Author</a>
+		             href="add-category.php">新增類別</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="logout.php">Logout</a>
+		             href="add-author.php">新增賣家</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" 
+		             href="logout.php">登出</a>
 		        </li>
 		      </ul>
 		    </div>

@@ -243,8 +243,8 @@ $categories = get_all_categories($conn);
 						<div class="col-lg-4 col-sm-6">
 							<div class="product text-center">
 							<div class="mb-3 position-relative">
-								<div class="badge text-white bg-primary">尺寸</div>
-								<a class="d-block" href="detail.html"><img class="img-fluid w-100" src="uploads/cover/<?=$book['cover']?>" alt="..."></a>
+								<div class="badge text-white bg-primary">尺寸</div>	<!--class="img-fluid w-100"這原本在底下img裡-->
+								<a class="d-block" href="detail.html"><img width="316" height="316"  src="uploads/cover/<?=$book['cover']?>" alt="..."></a>
 								<div class="product-overlay">
 								<ul class="mb-0 list-inline">
 									<li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-bs-toggle="modal">
