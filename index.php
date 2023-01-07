@@ -94,7 +94,7 @@ $categories = get_all_categories($conn);
 								<div class="col-lg-6">
 									<div class="p-4 my-md-4">
 										<h2 class="h4"><?=$book['title']?></h2>
-										<p class="text-muted">$250</p>
+										<p class="text-muted">$<?=$book['price']?></p>
 										<p class="text-sm mb-4">
 										<strong class="text-uppercase">角色名稱：</strong>
 										<?php foreach($authors as $author){ 
@@ -270,7 +270,7 @@ $categories = get_all_categories($conn);
 								</div>
 							</div>
 							<h6> <a class="reset-anchor" href="detail.html" ><?=$book['title']?></a></h6>
-							<p class="small text-muted">$ 金額</p>
+							<p class="small text-muted">$<?=$book['price']?></p>
 							</div>
 						</div>
 					<?php } ?>
