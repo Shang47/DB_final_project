@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-01-07 16:52:01
+-- 產生時間： 2023-01-08 08:57:32
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 7.4.16
 
@@ -80,20 +80,9 @@ CREATE TABLE `books` (
   `file` varchar(255) NOT NULL COMMENT 'photo2',
   `price` int(10) UNSIGNED NOT NULL,
   `size` char(1) NOT NULL,
-  `廠牌` varchar(20) NOT NULL,
-  `賣家id` int(11) NOT NULL
+  `廠牌` varchar(20) DEFAULT NULL,
+  `賣家id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- 傾印資料表的資料 `books`
---
-
-INSERT INTO `books` (`id`, `title`, `author_id`, `description`, `category_id`, `cover`, `file`, `price`, `size`, `廠牌`, `賣家id`) VALUES
-(1, 'TTTT', 1, 'DDDDD', 1, '63b6a1bd4a25d1.14084805.png', '63b6a1bd4b3140.45249261.png', 0, '', '', 0),
-(2, '粉紅飛機杯', 2, '<img src=x onerror=alert(1)>', 3, '63b81fd25bf603.74780115.png', '63b81fd25c2d06.04180536.jpg', 0, '', '', 0),
-(3, '保險套', 2, '你知道的', 2, '63b824b888e335.20984534.png', '63b824b8892345.94829494.png', 0, '', '', 0),
-(4, 'test product', 3, 'sss', 2, '63b94c56dfdd90.49338730.jpg', '63b94c56e0d263.27912733.jpg', 1234, 'S', 'NIKE', 1337),
-(5, '18歲純真少女', 3, '陪你度過寂寞的夜晚', 3, '63b950d5878d97.74062845.png', '63b950d5889975.06028390.png', 3000, 'S', '嘉女', 1024);
 
 -- --------------------------------------------------------
 
@@ -163,7 +152,7 @@ ALTER TABLE `authors`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `categories`
