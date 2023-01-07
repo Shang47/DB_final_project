@@ -62,9 +62,6 @@ $categories = get_all_categories($conn);
 					<li class="nav-item">
 					<!-- Link--><a class="nav-link active" href="index.php">商店</a>
 					</li>
-					<li class="nav-item">
-					<!-- Link--><a class="nav-link" href="detail.html">商品頁面之後要刪掉</a>
-					</li>
 				</ul>
 				<ul class="navbar-nav ms-auto">               
 					<li class="nav-item"><a class="nav-link" href="#!"> 
@@ -117,7 +114,7 @@ $categories = get_all_categories($conn);
 										<div class="row align-items-stretch mb-4 gx-0">
 										<div class="col-sm-7">
 										</div>
-										<div class="col-sm-5"><a class="btn btn-dark btn-sm w-100 h-100 d-flex align-items-center justify-content-center px-0" href="cart.html">查看詳細資訊</a></div>
+										<div class="col-sm-5"><a class="btn btn-dark btn-sm w-100 h-100 d-flex align-items-center justify-content-center px-0" href="detail.php?id=<?=$book['id']?>">查看詳細資訊</a></div>
 									</div>
 								</div>
 							</div>
@@ -246,7 +243,7 @@ $categories = get_all_categories($conn);
 							<div class="product text-center">
 							<div class="mb-3 position-relative">
 								<div class="badge text-white bg-primary"><?=$book['size']?></div>	<!--class="img-fluid w-100"這原本在底下img裡-->
-								<a class="d-block" href="detail.html"><img width="316" height="316"  src="uploads/cover/<?=$book['cover']?>" alt="..."></a>
+								<a class="d-block" href="detail.php?id=<?=$book['id']?>"><img width="316" height="316"  src="uploads/cover/<?=$book['cover']?>" alt="..."></a>
 								<div class="product-overlay">
 								<ul class="mb-0 list-inline">
 									<li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-bs-toggle="modal">
@@ -271,7 +268,7 @@ $categories = get_all_categories($conn);
 								</ul>
 								</div>
 							</div>
-							<h6> <a class="reset-anchor" href="detail.html" ><?=$book['title']?></a></h6>
+							<h6> <a class="reset-anchor" href="detail.php?id=<?=$book['id']?>" ><?=$book['title']?></a></h6>
 							<p class="small text-muted">$<?=$book['price']?></p>
 							</div>
 						</div>
