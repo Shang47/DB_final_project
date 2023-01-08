@@ -4,6 +4,7 @@ session_start();
 # If the admin is logged in
 if (isset($_SESSION['user_id']) &&
     isset($_SESSION['user_email'])) {
+	
 
 	# Database Connection File
 	include "db_conn.php";
@@ -15,6 +16,10 @@ if (isset($_SESSION['user_id']) &&
     # author helper function
 	include "php/func-author.php";
     $authors = get_all_author($conn);
+
+	# admin helper function
+	include "php/func-admin.php";
+    $admin = get_admin($conn, $_SESSION["user_id"]);
 
     if (isset($_GET['title'])) {
     	$title = $_GET['title'];
@@ -31,10 +36,18 @@ if (isset($_SESSION['user_id']) &&
     if (isset($_GET['author_id'])) {
     	$author_id = $_GET['author_id'];
     }else $author_id = 0;
-	$price = '';
-	$size = '';
-	$vendor_id='';
-	$brand = ''; 
+
+	if (isset($_GET['price'])) {
+    	$price = $_GET['price'];
+    }else $price = 0;
+
+	if (isset($_GET['size'])) {
+    	$size = $_GET['size'];
+    }else $size = 0;
+
+	if (isset($_GET['brand'])) {
+    	$brand = $_GET['brand'];
+    }else $brand = "無";
 ?>
 
 <!DOCTYPE html>
@@ -176,12 +189,10 @@ if (isset($_SESSION['user_id']) &&
 		</div>
 
 		<div class="mb-3">
-		    <label class="form-label">
-		           賣家id
-		           </label>
 		    <input type="text" 
 		           class="form-control"
-		           value="<?=$vendor_id?>" 
+		           value="<?=$admin['id'] ?>" 
+				   hidden
 		           name="vendor">
 		</div>
 
