@@ -7,7 +7,6 @@ if (isset($_SESSION['user_id']) &&
 
 	# Database Connection File
 	include "db_conn.php";
-
 	# Book helper function
 	include "php/func-book.php";
     $books = get_all_books($conn);
@@ -19,6 +18,11 @@ if (isset($_SESSION['user_id']) &&
     # Category helper function
 	include "php/func-category.php";
     $categories = get_all_categories($conn);
+	include "php/func-admin.php";
+    $user = get_admin($conn, $_SESSION["user_id"]);
+
+	$result = $conn->query('select * from admin;');
+
 
 ?>
 
@@ -116,7 +120,30 @@ if (isset($_SESSION['user_id']) &&
 			  現在沒有商品，快來新增一個吧!
 		  </div>
         <?php }else {?>
-
+		<!-- 個人資料 -->
+		<h4>個人資料</h4>
+		<table class="table table-bordered shadow">
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>購買方式</th>
+					<th>寄送方式</th>
+					<th>編輯資料</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><?= $user['full_name'] ?></th>
+					<th><?= $user['購買方式'] ?></th>
+					<th><?= $user['寄送方式'] ?></th>
+					<td>
+					<a href="edit-admin.php?id=<?=$user['id']?>" 
+					   class="btn btn-warning">
+					   編輯個人資料</a>
+				</td>
+				</tr>
+			</tbody>
+		</table>
 
         <!-- List of all books -->
 		<h4>所有商品</h4>
@@ -125,6 +152,9 @@ if (isset($_SESSION['user_id']) &&
 				<tr>
 					<th>#</th>
 					<th>品名</th>
+					<th>價格</th>
+					<th>尺寸</th>
+					<th>廠牌</th>
 					<th>角色名稱</th>
 					<th>作品名稱</th>
 					<th>詳細介紹</th>
@@ -162,6 +192,9 @@ if (isset($_SESSION['user_id']) &&
 					?>
 
 				</td>
+				<td><?=$book['price']?></td>
+				<td><?=$book['size']?></td>
+				<td><?=$book['廠牌']?></td>
 				<td><?=$book['description']?></td>
 				<td>
 					<?php if ($categories == 0) {
@@ -175,6 +208,7 @@ if (isset($_SESSION['user_id']) &&
 					}
 					?>
 				</td>
+				
 				<td>
 					<a href="edit-book.php?id=<?=$book['id']?>" 
 					   class="btn btn-warning">
