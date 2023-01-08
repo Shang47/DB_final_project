@@ -22,7 +22,7 @@ if (isset($_SESSION['user_id']) &&
 
 		#simple form Validation
 		if (empty($name)) {
-			$em = "The author name is required";
+			$em = "請輸入角色名稱喔";
 			header("Location: ../add-author.php?error=$em");
             exit;
 		}else {
@@ -38,12 +38,12 @@ if (isset($_SESSION['user_id']) &&
 		    **/
 		     if ($res) {
 		     	# success message
-		     	$sm = "Successfully created!";
+		     	$sm = "新建成功!";
 				header("Location: ../add-author.php?success=$sm");
 	            exit;
 		     }else{
 		     	# Error message
-		     	$em = "Unknown Error Occurred!";
+		     	$em = "未知的錯誤，請再試一次";
 				header("Location: ../add-author.php?error=$em");
 	            exit;
 		     }

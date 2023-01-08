@@ -2,9 +2,14 @@
 
 version: 1.0.0
 
-### Admin User Name : eliasfsdev@gmail.com
+### 01User Name : eliasfsdev@gmail.com
+### 01Password : 12345
 
-### Admin Password : 12345
+### 02User Name : shiaoc@123
+### 02Password : 123456
+
+### 02User Name : aaa@aaa
+### 02Password : 123456
 
 ## Full Tutorial
 

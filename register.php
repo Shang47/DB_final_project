@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id']) &&
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.png">
-	<title>Coshop | 登入</title>
+	<title>Coshop | 註冊</title>
 
     <!-- bootstrap 5 CDN-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -53,9 +53,6 @@ if (!isset($_SESSION['user_id']) &&
 					<li class="nav-item">
 					<!-- Link--><a class="nav-link active" href="index.php">商店</a>
 					</li>
-					<li class="nav-item">
-					<!-- Link--><a class="nav-link" href="detail.html">商品頁面之後要刪掉</a>
-					</li>
 				</ul>
 				</div>
 			</nav>
@@ -66,14 +63,42 @@ if (!isset($_SESSION['user_id']) &&
 			<form class="p-5 rounded shadow"
 				style="max-width: 30rem; width: 100%"
 				method="POST"
-				action="php/auth.php">
+				action="php/register.php">
 
-			<h1 class="text-center display-4 pb-5">Register</h1>
+			<h1 class="text-center display-4 pb-5">註冊帳號</h1>
 			<?php if (isset($_GET['error'])) { ?>
 			<div class="alert alert-danger" role="alert">
 				<?=htmlspecialchars($_GET['error']); ?>
 			</div>
 			<?php } ?>
+
+			<?php if (isset($_GET['success'])) { ?>
+          <div class="alert alert-success" role="alert">
+			  <?=htmlspecialchars($_GET['success']); ?>
+		  </div>
+		<?php } ?>
+
+			<div class="mb-3 ">
+				<label for="exampleInputEmail1" 
+					class="form-label">名字</label>
+				<input type="text" 
+					class="form-control" 
+					name="name" 
+					id="exampleInputEmail1" 
+					aria-describedby="emailHelp"
+					placeholder="摳死不累">
+			</div>
+
+			<div class="mb-3 ">
+				<label for="exampleInputEmail1" 
+					class="form-label">fb連結</label>
+				<input type="text" 
+					class="form-control" 
+					name="fb_link" 
+					id="exampleInputEmail1" 
+					aria-describedby="emailHelp"
+					placeholder="https://www.facebook.com/Cosplay/">
+			</div>
 
 			<div class="mb-3 ">
 				<label for="exampleInputEmail1" 
@@ -94,11 +119,33 @@ if (!isset($_SESSION['user_id']) &&
 					name="password" 
 					id="exampleInputPassword1">
 			</div>
+
+			<div class="mb-3 ">
+				<label for="exampleInputPurchase1" 
+					class="form-label">可提供的購買方式</label>
+				<input type="text" 
+					class="form-control" 
+					name="purchase_means" 
+					id="exampleInputPurchase1" 
+					>
+			</div>
+
+			<div class="mb-3 ">
+				<label for="exampleInputLogi1" 
+					class="form-label">寄送方式</label>
+				<input type="text" 
+					class="form-control" 
+					name="delivery_method" 
+					id="exampleInputLogi1" 
+					>
+			</div>
+
 			<button type="submit" 
 					class="btn btn-primary btn-large">
 					註冊</button>
-			<a href="index.php">Store</a>
+					<a href="login.php">登入</a>
 			</form>
+			
 		</div>
 		<!-- JavaScript files-->
 		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -139,6 +186,6 @@ if (!isset($_SESSION['user_id']) &&
 </html>
 
 <?php }else{
-  header("Location: admin.php");
+  header("Location: admin.php?loggedin=true");
   exit;
 } ?>
