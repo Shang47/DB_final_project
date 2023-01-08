@@ -95,10 +95,6 @@ if (!isset($_SESSION['user_id']) &&
 					class="btn btn-primary btn-large">
 					登入</button>
 			<a href="register.php">註冊</a>
- main
-
-			<a href="index.php">Store</a>
- main
 			</form>
 		</div>
 		<!-- JavaScript files-->
