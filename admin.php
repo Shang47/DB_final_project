@@ -128,6 +128,7 @@ if (isset($_SESSION['user_id']) &&
 					<th>姓名</th>
 					<th>購買方式</th>
 					<th>寄送方式</th>
+					<th>個人FB</th>
 					<th>編輯資料</th>
 				</tr>
 			</thead>
@@ -136,6 +137,11 @@ if (isset($_SESSION['user_id']) &&
 					<th><?= $user['full_name'] ?></th>
 					<th><?= $user['購買方式'] ?></th>
 					<th><?= $user['寄送方式'] ?></th>
+					<td>
+					<a href="<?=$user['fb網址']?>" 
+					   class="btn btn-success">
+					   連到FB網址</a>
+				</td>
 					<td>
 					<a href="edit-admin.php?id=<?=$user['id']?>" 
 					   class="btn btn-warning">
