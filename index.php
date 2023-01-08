@@ -94,7 +94,7 @@ $categories = get_all_categories($conn);
 								<div class="col-lg-6">
 									<div class="p-4 my-md-4">
 										<h2 class="h4"><?=$book['title']?></h2>
-										<p class="text-muted">$250</p>
+										<p class="text-muted">$<?=$book['price']?></p>
 										<p class="text-sm mb-4">
 										<strong class="text-uppercase">角色名稱：</strong>
 										<?php foreach($authors as $author){ 
@@ -221,7 +221,9 @@ $categories = get_all_categories($conn);
 				<div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
 					<div class="row mb-3 align-items-center">
 					<div class="col-lg-6 mb-2 mb-lg-0">
-						<p class="text-sm text-muted mb-0">Showing 1–12 of 53 results</p><!-- 這邊需要改!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+						<?php $start = ($i > 0)? 1 : 0?>
+						<p class="text-sm text-muted mb-0">Showing <?=$start?>–<?=$i?> of <?=$i?> results</p><!-- 這邊需要改!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 					</div>
 					<div class="col-lg-6">
 						<ul class="list-inline d-flex align-items-center justify-content-lg-end mb-0">
@@ -243,7 +245,7 @@ $categories = get_all_categories($conn);
 						<div class="col-lg-4 col-sm-6">
 							<div class="product text-center">
 							<div class="mb-3 position-relative">
-								<div class="badge text-white bg-primary">尺寸</div>	<!--class="img-fluid w-100"這原本在底下img裡-->
+								<div class="badge text-white bg-primary"><?=$book['size']?></div>	<!--class="img-fluid w-100"這原本在底下img裡-->
 								<a class="d-block" href="detail.html"><img width="316" height="316"  src="uploads/cover/<?=$book['cover']?>" alt="..."></a>
 								<div class="product-overlay">
 								<ul class="mb-0 list-inline">
@@ -270,7 +272,7 @@ $categories = get_all_categories($conn);
 								</div>
 							</div>
 							<h6> <a class="reset-anchor" href="detail.html" ><?=$book['title']?></a></h6>
-							<p class="small text-muted">$ 金額</p>
+							<p class="small text-muted">$<?=$book['price']?></p>
 							</div>
 						</div>
 					<?php } ?>

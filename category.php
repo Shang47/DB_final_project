@@ -105,7 +105,7 @@ $current_category = get_category($conn, $id);
 										<div class="col-lg-6">
 											<div class="p-4 my-md-4">
 												<h2 class="h4"><?=$book['title']?></h2>
-												<p class="text-muted">$250</p>
+												<p class="text-muted">$<?=$book['price']?></p>
 												<p class="text-sm mb-4">
 												<strong class="text-uppercase">角色名稱：</strong>
 												<?php foreach($authors as $author){ 
@@ -265,7 +265,7 @@ $current_category = get_category($conn, $id);
 							<div class="col-lg-4 col-sm-6">
 								<div class="product text-center">
 								<div class="mb-3 position-relative">
-									<div class="badge text-white bg-primary">尺寸</div>
+									<div class="badge text-white bg-primary"><?=$book['size']?></div>
 									<a class="d-block" href="detail.html"><img class="img-fluid w-100" src="uploads/cover/<?=$book['cover']?>" alt="..."></a>
 									<div class="product-overlay">
 									<ul class="mb-0 list-inline">
@@ -292,7 +292,7 @@ $current_category = get_category($conn, $id);
 									</div>
 								</div>
 								<h6> <a class="reset-anchor" href="detail.html" ><?=$book['title']?></a></h6>
-								<p class="small text-muted">$ 金額</p>
+								<p class="small text-muted">$ <?=$book['price']?></p>
 								</div>
 							</div>
 					<?php } ?>
