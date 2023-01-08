@@ -85,9 +85,6 @@ if (isset($_SESSION['user_id']) &&
 					<li class="nav-item">
 					<!-- Link--><a class="nav-link active" href="index.php">商店</a>
 					</li>
-					<li class="nav-item">
-					<!-- Link--><a class="nav-link" href="detail.php">商品頁面之後要刪掉</a>
-					</li>
 				</ul>
 				<ul class="navbar-nav ms-auto">               
 					<li class="nav-item"><a class="nav-link" href="#!"> 

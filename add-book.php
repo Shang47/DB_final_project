@@ -39,11 +39,11 @@ if (isset($_SESSION['user_id']) &&
 
 	if (isset($_GET['price'])) {
     	$price = $_GET['price'];
-    }else $price = 0;
+    }else $price = '';
 
 	if (isset($_GET['size'])) {
     	$size = $_GET['size'];
-    }else $size = 0;
+    }else $size = '';
 
 	if (isset($_GET['brand'])) {
     	$brand = $_GET['brand'];
@@ -66,9 +66,9 @@ if (isset($_SESSION['user_id']) &&
 </head>
 <body>
 	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="admin.php">總覽</a>
+		    <a class="navbar-brand" href="admin.php">個人管理頁面</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -78,19 +78,19 @@ if (isset($_SESSION['user_id']) &&
 		        <li class="nav-item">
 		          <a class="nav-link" 
 		             aria-current="page" 
-		             href="index.php">賣場</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link active" 
-		             href="add-book.php">新增商品</a>
+		             href="index.php">進入商店</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-category.php">新增類別</a>
+		             href="add-book.php">增加商品</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-author.php">新增賣家</a>
+		             href="add-category.php">增加作品</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" 
+		             href="add-author.php">增加角色</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
@@ -141,7 +141,7 @@ if (isset($_SESSION['user_id']) &&
 
 		<div class="mb-3">
 		    <label class="form-label">
-		           商品價錢
+		           商品價格
 		           </label>
 		    <input type="text" 
 		           class="form-control"
@@ -159,34 +159,7 @@ if (isset($_SESSION['user_id']) &&
 		           name="size">
 		</div>
 
-		<div class="mb-3">
-		    <label class="form-label">
-		           賣家
-		           </label>
-		    <select name="book_author"
-		            class="form-control">
-		    	    <option value="0">
-		    	    	選擇賣家
-		    	    </option>
-		    	    <?php 
-                    if ($authors == 0) {
-                    	# Do nothing!
-                    }else{
-		    	    foreach ($authors as $author) { 
-		    	    	if ($author_id == $author['id']) { ?>
-		    	    	<option 
-		    	    	  selected
-		    	    	  value="<?=$author['id']?>">
-		    	    	  <?=$author['name']?>
-		    	        </option>
-		    	        <?php }else{ ?>
-						<option 
-							value="<?=$author['id']?>">
-							<?=$author['name']?>
-						</option>
-		    	   <?php }} } ?>
-		    </select>
-		</div>
+		
 
 		<div class="mb-3">
 		    <input type="text" 
@@ -208,12 +181,12 @@ if (isset($_SESSION['user_id']) &&
 
 		<div class="mb-3">
 		    <label class="form-label">
-		           商品類別
+		           作品來源
 		           </label>
 		    <select name="book_category"
 		            class="form-control">
 		    	    <option value="0">
-		    	    	選擇類別
+		    	    	選擇作品
 		    	    </option>
 		    	    <?php 
                     if ($categories == 0) {
@@ -237,6 +210,35 @@ if (isset($_SESSION['user_id']) &&
 
 		<div class="mb-3">
 		    <label class="form-label">
+		           角色
+		           </label>
+		    <select name="book_author"
+		            class="form-control">
+		    	    <option value="0">
+		    	    	選擇角色
+		    	    </option>
+		    	    <?php 
+                    if ($authors == 0) {
+                    	# Do nothing!
+                    }else{
+		    	    foreach ($authors as $author) { 
+		    	    	if ($author_id == $author['id']) { ?>
+		    	    	<option 
+		    	    	  selected
+		    	    	  value="<?=$author['id']?>">
+		    	    	  <?=$author['name']?>
+		    	        </option>
+		    	        <?php }else{ ?>
+						<option 
+							value="<?=$author['id']?>">
+							<?=$author['name']?>
+						</option>
+		    	   <?php }} } ?>
+		    </select>
+		</div>
+
+		<div class="mb-3">
+		    <label class="form-label">
 		           商品照片
 		           </label>
 		    <input type="file" 
@@ -246,7 +248,7 @@ if (isset($_SESSION['user_id']) &&
 
 		<div class="mb-3">
 		    <label class="form-label">
-		           其它照片(非必要)
+		           其它照片
 		           </label>
 		    <input type="file" 
 		           class="form-control" 

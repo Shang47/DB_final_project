@@ -53,9 +53,6 @@ if (!isset($_SESSION['user_id']) &&
 					<li class="nav-item">
 					<!-- Link--><a class="nav-link active" href="index.php">商店</a>
 					</li>
-					<li class="nav-item">
-					<!-- Link--><a class="nav-link" href="detail.html">商品頁面之後要刪掉</a>
-					</li>
 				</ul>
 				</div>
 			</nav>
@@ -89,7 +86,11 @@ if (!isset($_SESSION['user_id']) &&
 					name="name" 
 					id="exampleInputEmail1" 
 					aria-describedby="emailHelp"
+ main
+					placeholder="摳死不累">
+=======
 					placeholder="藍教桃">
+ main
 			</div>
 
 			<div class="mb-3 ">
@@ -100,7 +101,11 @@ if (!isset($_SESSION['user_id']) &&
 					name="fb_link" 
 					id="exampleInputEmail1" 
 					aria-describedby="emailHelp"
+ main
+					placeholder="https://www.facebook.com/Cosplay/">
+=======
 					placeholder="cosplay@example.com">
+ main
 			</div>
 
 			<div class="mb-3 ">
@@ -146,8 +151,9 @@ if (!isset($_SESSION['user_id']) &&
 			<button type="submit" 
 					class="btn btn-primary btn-large">
 					註冊</button>
-			<a href="index.php">Store</a>
+					<a href="login.php">登入</a>
 			</form>
+			
 		</div>
 		<!-- JavaScript files-->
 		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

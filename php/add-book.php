@@ -135,12 +135,12 @@ if (isset($_SESSION['user_id']) &&
 		    **/
 		     if ($res) {
 		     	# success message
-		     	$sm = "The book successfully created!";
+		     	$sm = "新建成功!!!!";
 				header("Location: ../add-book.php?success=$sm");
 	            exit;
 		     }else{
 		     	# Error message
-		     	$em = "Unknown Error Occurred!";
+		     	$em = "未知的錯誤，請再試一次";
 				header("Location: ../add-book.php?error=$em");
 	            exit;
 		     }

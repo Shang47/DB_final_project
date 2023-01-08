@@ -11,7 +11,7 @@ if (isset($_SESSION['user_id']) &&
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Add Category</title>
+	<title>Coshop | 二手買賣網-新增作品</title>
 
     <!-- bootstrap 5 CDN-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -24,7 +24,7 @@ if (isset($_SESSION['user_id']) &&
 	<div class="container">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="admin.php">總覽</a>
+		    <a class="navbar-brand" href="admin.php">商品管理</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -42,11 +42,11 @@ if (isset($_SESSION['user_id']) &&
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-category.php">新增類別</a>
+		             href="add-category.php">新增作品</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
-		             href="add-author.php">新增賣家</a>
+		             href="add-author.php">新增角色</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" 
@@ -62,7 +62,7 @@ if (isset($_SESSION['user_id']) &&
            style="width: 90%; max-width: 50rem;">
 
      	<h1 class="text-center pb-5 display-4 fs-3">
-     		Add New Category
+		 		新增作品
      	</h1>
      	<?php if (isset($_GET['error'])) { ?>
           <div class="alert alert-danger" role="alert">
@@ -76,7 +76,7 @@ if (isset($_SESSION['user_id']) &&
 		<?php } ?>
      	<div class="mb-3">
 		    <label class="form-label">
-		           	Category Name
+						作品名稱
 		           </label>
 		    <input type="text" 
 		           class="form-control" 
@@ -85,7 +85,7 @@ if (isset($_SESSION['user_id']) &&
 
 	    <button type="submit" 
 	            class="btn btn-primary">
-	            Add Category</button>
+	            新增作品</button>
      </form>
 	</div>
 </body>

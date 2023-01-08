@@ -34,15 +34,25 @@ function get_book($con, $id){
 
 
 # Search books function
-function search_books($con, $key){
+function search_books($con, $key, $sort){
    # creating simple search algorithm :) 
    $key = "%{$key}%";
 
-   $sql  = "SELECT * FROM books 
-            WHERE title LIKE ?
-            OR description LIKE ?";
-   $stmt = $con->prepare($sql);
-   $stmt->execute([$key, $key]);
+   if($sort == 'none'){
+      $sql  = "SELECT * FROM books 
+               WHERE title LIKE ?
+               OR description LIKE ?";
+      $stmt = $con->prepare($sql);
+      $stmt->execute([$key, $key]);
+   }else{
+      $sql  = "SELECT * FROM books 
+               WHERE title LIKE ?
+               OR description LIKE ?
+               order by ? desc";
+      $stmt = $con->prepare($sql);
+      $stmt->execute([$key, $key, $sort]);
+   }
+   
 
    if ($stmt->rowCount() > 0) {
         $books = $stmt->fetchAll();
@@ -72,6 +82,21 @@ function get_books_by_category($con, $id){
 # get books by author
 function get_books_by_author($con, $id){
    $sql  = "SELECT * FROM books WHERE author_id=?";
+   $stmt = $con->prepare($sql);
+   $stmt->execute([$id]);
+
+   if ($stmt->rowCount() > 0) {
+        $books = $stmt->fetchAll();
+   }else {
+      $books = 0;
+   }
+
+   return $books;
+}
+
+# get books by admin
+function get_books_by_admin($con, $id){
+   $sql  = "SELECT * FROM books WHERE 賣家id=?";
    $stmt = $con->prepare($sql);
    $stmt->execute([$id]);
 

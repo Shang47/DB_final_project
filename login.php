@@ -53,9 +53,6 @@ if (!isset($_SESSION['user_id']) &&
 					<li class="nav-item">
 					<!-- Link--><a class="nav-link active" href="index.php">商店</a>
 					</li>
-					<li class="nav-item">
-					<!-- Link--><a class="nav-link" href="detail.html">商品頁面之後要刪掉</a>
-					</li>
 				</ul>
 				</div>
 			</nav>
@@ -98,7 +95,10 @@ if (!isset($_SESSION['user_id']) &&
 					class="btn btn-primary btn-large">
 					登入</button>
 			<a href="register.php">註冊</a>
+ main
+
 			<a href="index.php">Store</a>
+ main
 			</form>
 		</div>
 		<!-- JavaScript files-->
