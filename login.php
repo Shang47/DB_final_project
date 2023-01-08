@@ -97,7 +97,7 @@ if (!isset($_SESSION['user_id']) &&
 			<button type="submit" 
 					class="btn btn-primary btn-large">
 					登入</button>
-			<a href=>註冊</a>
+			<a href="register.php">註冊</a>
 			<a href="index.php">Store</a>
 			</form>
 		</div>

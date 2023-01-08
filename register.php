@@ -68,7 +68,7 @@ if (!isset($_SESSION['user_id']) &&
 				method="POST"
 				action="php/auth.php">
 
-			<h1 class="text-center display-4 pb-5">Register</h1>
+			<h1 class="text-center display-4 pb-5">註冊帳號</h1>
 			<?php if (isset($_GET['error'])) { ?>
 			<div class="alert alert-danger" role="alert">
 				<?=htmlspecialchars($_GET['error']); ?>
@@ -94,6 +94,27 @@ if (!isset($_SESSION['user_id']) &&
 					name="password" 
 					id="exampleInputPassword1">
 			</div>
+
+			<div class="mb-3 ">
+				<label for="exampleInputPurchase1" 
+					class="form-label">可提供的購買方式</label>
+				<input type="text" 
+					class="form-control" 
+					name="purchase_means" 
+					id="exampleInputPurchase1" 
+					>
+			</div>
+
+			<div class="mb-3 ">
+				<label for="exampleInputLogi1" 
+					class="form-label">寄送方式</label>
+				<input type="text" 
+					class="form-control" 
+					name="logistics" 
+					id="exampleInputLogi1" 
+					>
+			</div>
+
 			<button type="submit" 
 					class="btn btn-primary btn-large">
 					註冊</button>
